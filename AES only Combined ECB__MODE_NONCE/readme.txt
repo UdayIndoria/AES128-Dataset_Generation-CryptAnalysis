@@ -1,0 +1,21 @@
+AES-128 Encryption
+
+Capturing the ciphertext after each rounds.
+
+Instructions to use:
+1. Place keys(files that contains keys) in the key_files folder.
+2. Place plaintext (that has to be encrypted with the different keys) in the plaintext_files.
+3. start terminal or command prompt (make sure working directory is same as the directory that contains codes and files).
+4. run below command in terminal
+python3 main.py
+5. After successfull execution of the program, you will get the outputs.
+6. data.csv file contains the data related to the ciphertext file, plaintext file name of particular ciphertext file, and the key in which plaintext encrypted.
+7.1. Inside ciphertext_files directory you will get the 10 ciphertext files (each file is output of different rounds; and these files are combined form of all the ciphertext generated from plaintext with different keys).
+7.2. Inside ciphertext_files directory you will get the 10 directories (each directory is output of different roubds) in which several ciphertext files are stored. Every file is encrypted file of the plaintext with different keys.
+
+
+
+NOTE:
+1. No need to configure anything.
+2. No need to give input file names for key and plaintext, It will automatically get all the key files and plaintext files from the respective directories.
+3. Just run the code with the sample files already given. and see the ** MAGIC **
