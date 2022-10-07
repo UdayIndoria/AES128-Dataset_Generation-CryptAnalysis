@@ -38,9 +38,9 @@ class AES_GENERATE_FILES():
                     #print("Key : "+str(hex(key)))
                     path_plaintext= "plaintext_files/"
                     for plaintext_files in [path_plaintext+f for f in os.listdir(path_plaintext) if os.path.isfile(os.path.join(path_plaintext,f))]:
-                        print("\033[1;36mStarted\033[0m for Plaintext File : "+plaintext_files)
+                        #print("\033[1;36mStarted\033[0m for Plaintext File : "+plaintext_files)
                         with open(plaintext_files, "rb") as plaintext_file:
-                            ciphertext_file = self.create_open_individual(path_ciphertext,str(cipher_file_no),"wb")
+                            #ciphertext_file = self.create_open_individual(path_ciphertext,str(cipher_file_no),"wb")
                             data_file.write(str(cipher_file_no)+","+str(key)+","+plaintext_files.split("/")[-1]+"\n")
                             while(True):
                                 plaintext = plaintext_file.read(16)
@@ -53,14 +53,14 @@ class AES_GENERATE_FILES():
                                 plaintext = int.from_bytes(plaintext, "big")
                                 ciphertext = self.AES.encrypt(plaintext)
                                 for i in range(0,10):
-                                    ciphertext_file[i].write(ciphertext[i].to_bytes(16, 'big'))
+                                    #ciphertext_file[i].write(ciphertext[i].to_bytes(16, 'big'))
                                     ciphertext_file_combined[i].write(ciphertext[i].to_bytes(16, 'big'))
                                 #print("Plaintext : "+str(hex(plaintext)))
                                 #print("Ciphertext : "+str(hex(ciphertext)))
                             cipher_file_no+=1
-                            for i in range(0,10):
-                                ciphertext_file[i].close()  
-                        print("\033[1;32mFinished\033[0m for Plaintext File : "+plaintext_files)
+                            '''for i in range(0,10):
+                                ciphertext_file[i].close()'''  
+                        #print("\033[1;32mFinished\033[0m for Plaintext File : "+plaintext_files)
             print("\033[1;32mFinished\033[0m for Key File : "+key_files)
         for i in range(0,10):
             ciphertext_file_combined[i].close()
